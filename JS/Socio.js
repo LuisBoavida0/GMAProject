@@ -6,9 +6,9 @@ function GetSocioData() {
         $("#Nome").val(JsonObject.Nome);
 
         if (JsonObject.Sexo == 0)
-            $("#M").attr("selected", "selected");
+            $("#Sexo").val('0');
         else
-            $("#F").attr("selected", "selected");
+            $("#Sexo").val('1');
 
         $("#Idade").val(JsonObject.Idade);
 
@@ -19,13 +19,13 @@ function GetSocioData() {
         $("#Email").val(JsonObject.Email);
 
         if (JsonObject.UserType == EnumUserType.Presidente)
-            $("#1").attr("selected", "selected");
+            $("#Funcao").val('1');
         else if (JsonObject.UserType == EnumUserType.VicePresidente)
-            $("#2").attr("selected", "selected");
+            $("#Funcao").val('2');
         else if (JsonObject.UserType == EnumUserType.Socio)
-            $("#0").attr("selected", "selected");
+            $("#Funcao").val('0');
         else if (JsonObject.UserType == EnumUserType.Tesoureiro)
-            $("#3").attr("selected", "selected");
+            $("#Funcao").val('3');
 
         $("#DataDeNascimento").val(JsonObject.DataDeNascimento);
     });
@@ -50,4 +50,11 @@ function Save() {
 
 function Cancel() {
     window.location = "NumberOfSocios.php";
+}
+
+function Delete() {
+    const urlParams = new URLSearchParams(window.location.search);
+    $.post('../Handlers/SocioHandler.php?action=DeleteSocio&id=' + urlParams.get('id'), function (response) {
+        window.location = "NumberOfSocios.php";
+    });
 }

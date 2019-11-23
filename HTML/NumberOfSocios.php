@@ -11,11 +11,48 @@
     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
     <script src="../JS/NumberOfSocios.js"></script>
     <script src="../JS/EnumTypes.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="../CSS/NumberOfSocios.css">
 </head>
 
+<?php
+include_once '../PHP/Session.php';
+IsLoggedIn();
+?>
+
 <body onload="GetAllSocios()">
-    <div class="container">       
+    <!-- Navbar -->
+    <div class="w3-top">
+        <div class="w3-bar w3-red w3-card w3-left-align w3-large">
+            <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-red" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+            <a href="Home.php" class="w3-bar-item w3-button w3-padding-large w3-white">Home</a>
+            <a href="Login.php" onclick="$.post('../PHP/Session.php?action=Logout');" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Logout</a>
+            <div class="w3-dropdown-hover w3-hide-small">
+                <button class="w3-button w3-padding-large" title="Notifications" onclick="window.location='BackOffice.php'">BackOffice <i class="fa fa-caret-down"></i></button>
+                <div class="w3-dropdown-content w3-card-4 w3-bar-block">
+                    <a href="NumberOfSocios.php" class="w3-bar-item w3-button">Numero de sócios</a>
+                    <a href="#" class="w3-bar-item w3-button">Link</a>
+                    <a href="#" class="w3-bar-item w3-button">Link</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navbar on small screens -->
+        <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
+            <a href="Login.php" class="w3-bar-item w3-button w3-padding-large">Logout</a>
+            <a href="NumberOfSocios.php" class="w3-bar-item w3-button w3-padding-large">BackOffice</a>
+            <div class="w3-dropdown-hover">
+                <button class="w3-button w3-padding-large" title="Notifications">Dropdown <i class="fa fa-caret-down"></i></button>
+                <div class="w3-dropdown-content w3-card-4 w3-bar-block">
+                    <a href="#" class="w3-bar-item w3-button">Link</a>
+                    <a href="#" class="w3-bar-item w3-button">Link</a>
+                    <a href="#" class="w3-bar-item w3-button">Link</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-100">
         <div class="row">
             <div class="panel panel-primary filterable">
                 <div class="panel-heading">
@@ -24,7 +61,7 @@
                         <button class="btn btn-default btn-xs btn-filter"><span class="glyphicon glyphicon-filter"></span> Filter</button>
                     </div>
                 </div>
-                <table class="table">
+                <table class="table position-relative">
                     <thead>
                         <tr class="filters">
                             <th><input type="text" class="form-control" placeholder="Nome" disabled></th>
@@ -38,7 +75,7 @@
                         </tr>
                     </thead>
                     <tbody id="TableSociosBody">
-                        
+
                     </tbody>
                 </table>
             </div>

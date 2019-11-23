@@ -21,7 +21,7 @@ function GetAllSocios() {
 
             jQuery('<tr/>', {
                 id: "Socio" + e.id,
-                "ondblclick": "OpenFichaDeSocio('" + e.id + "')"
+                "onclick": "OpenFichaDeSocio('" + e.id + "')"
             }).appendTo('#TableSociosBody');
 
             jQuery('<td/>', {}).appendTo('#Socio' + e.id).text(e.Nome);
@@ -44,7 +44,11 @@ function GetAllSocios() {
 }
 
 function OpenFichaDeSocio(id) {
-    window.location = "../HTML/Socio.php?id=" + id;
+    
+    window.open(
+        '../HTML/Socio.php?id=' + id,
+        '_blank'
+    );
 }
 
 $(document).ready(function () {

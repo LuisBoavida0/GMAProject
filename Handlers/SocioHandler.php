@@ -11,9 +11,18 @@ if (isset($_REQUEST['action'])) {
             break;
         case "SaveSocioData":
             session_start();
-            $query = $db->prepare("UPDATE users SET Nome = '" . $_REQUEST["Nome"] . "', Sexo = '" . $_REQUEST["Sexo"] . "', Idade = '" . $_REQUEST["Idade"] . "', DataDeInscricao = '" . $_REQUEST["DataDeInscricao"] . "', DataDeQuotas = '" . $_REQUEST["DataDeQuotas"] . "', Email = '" . $_REQUEST["Email"] . "', UserType = '" . $_REQUEST["UserType"] . "', DataDeNascimento = '" . $_REQUEST["DataDeNascimento"] . "' WHERE id = '" . $_REQUEST["id"] . "'");
+            $teste = "UPDATE users SET Nome = '" . $_REQUEST["Nome"] . "', Sexo = " . $_REQUEST["Sexo"] . ", Idade = '" . $_REQUEST["Idade"] . "', DataDeInscricao = '" . $_REQUEST["DataDeInscricao"] . "', DataDeQuotas = '" . $_REQUEST["DataDeQuotas"] . "', Email = '" . $_REQUEST["Email"] . "', UserType = '" . $_REQUEST["UserType"] . "', DataDeNascimento = '" . $_REQUEST["DataDeNascimento"] . "' WHERE id = '" . $_REQUEST["id"] . "'";
+            $query = $db->prepare($teste);
             $query->execute();
             echo "Success";
             break;
+        case "DeleteSocio":
+            session_start();
+            $teste = "DELETE FROM users WHERE id = '" . $_REQUEST["id"] . "';";
+            $query = $db->prepare($teste);
+            $query->execute();
+            echo "Deleted";
+            break;
+            
     }
 }
