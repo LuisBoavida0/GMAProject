@@ -14,6 +14,11 @@
     <script src="../JS/EnumTypes.js"></script>
 </head>
 
+<?php
+include_once '../PHP/Session.php';
+IsLoggedInAdmin();
+?>
+
 <body onload="GetSocioData()">
     <div class="container mt-5">
         <table class="table table-striped">

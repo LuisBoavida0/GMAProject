@@ -112,3 +112,14 @@ img {vertical-align: middle;}
 @media only screen and (max-width: 300px) {
   .prev, .next,.text {font-size: 11px}
 }
+
+
+.top-right-0 {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.background-color-div {
+  background-color: rgba(0,0,0,0.5);
+}

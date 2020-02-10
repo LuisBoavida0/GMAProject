@@ -1,16 +1,28 @@
 function GetEvents() {
-  $.post('../Handlers/HomeHandler.php?action=GetEvents', function (response) {
-    var ParsedResponse = JSON.parse(response);
+  var urlParams = new URLSearchParams(window.location.search);
 
+  var keys = urlParams.keys();
+  var idFromParam;
+  for (key of keys) {
+    idFromParam = key;
+  }
+
+  $.post('../Handlers/SingleEventHandler.php?action=GetSingleEvents&id=' + idFromParam, function (response) {
+    var ParsedResponse = JSON.parse(response);
+    if (ParsedResponse.length == 0) {
+      window.location = "home.php";
+    }
     var ItemsCounter = 0;
     ParsedResponse.forEach(e => {
       ItemsCounter++;
 
-      $("#SlideshowContainerDiv").append(
+      $("#EventTitle").html(e.Titulo);
+
+      $("#SlideshowContainerDiv").prepend(
         "<div class='mySlides fade show'>" +
-          "<div class='numbertext'>" + ItemsCounter + " / " + ParsedResponse.length + "</div>" +
-          "<img src='../Files/FilesSended/" + e.ficheiro + "' onclick='window.location = \"SingleEvent.php?" + e.id + "\";' class='img-slider'>" +
-          "<div class='text'>" + e.Titulo + "</div>" +
+        "<div class='numbertext'>" + ItemsCounter + " / " + ParsedResponse.length + "</div>" +
+        "<img src='../Files/FilesSended/" + e.ficheiro + "' class='img-slider'>" +
+        "<div class='text'>" + e.Descricao + "</div>" +
         "</div>"
       );
 

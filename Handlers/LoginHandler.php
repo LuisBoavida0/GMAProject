@@ -17,6 +17,8 @@ if (isset($_REQUEST['action'])) {
                     $ID = "Admin";
                 else if ($r->UserType == 0)
                     $ID = "Socio";
+                else if ($r->UserType == 2)
+                    $ID = "Table";
             }
             echo $ID;
             break;

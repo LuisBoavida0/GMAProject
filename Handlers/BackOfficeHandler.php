@@ -14,7 +14,7 @@ if (isset($_REQUEST['action'])) {
             break;
         case "GetNumberOfAniversariantes":
             session_start();
-            $query = $db->prepare("SELECT COUNT(id) as Count FROM users WHERE DataDeNascimento = '" .  date("Y-m-d") . "' ");
+            $query = $db->prepare("SELECT COUNT(id) as Count FROM users WHERE DATE_FORMAT(DataDeNascimento, '%m-%d') = DATE_FORMAT(CURRENT_DATE, '%m-%d'); ");
             $query->execute();
             $rs = $query->fetchAll(PDO::FETCH_OBJ);
 
