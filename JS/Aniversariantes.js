@@ -23,7 +23,6 @@ function GetAniversariantes() {
                 "<div id='" + e.id + "'>" +
                     "<h3>" + e.Nome + "</h3>" +
                     "<p> Sexo: " + Sexo + "</p>" +
-                    "<p> Idade: " + e.Idade + " anos</p>" +
                     "<p> Data de Inscrição: " + e.DataDeInscricao + "</p>" +
                     "<p> Data de Quotas: " + e.DataDeQuotas + "</p>" +
                     "<p> Email: " + e.Email + "</p>" +

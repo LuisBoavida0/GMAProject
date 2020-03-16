@@ -1,6 +1,6 @@
 <?php
 include("../../PHP/Config.php");
-$query = $db->prepare("SELECT id, Nome, Sexo, Idade, DataDeInscricao, DataDeQuotas, Email, UserType, QuotasPayGiven, PhoneNumber FROM users WHERE DataDeQuotas < CURRENT_DATE AND QuotasPayGiven = 1");
+$query = $db->prepare("SELECT id, Nome, Sexo, DataDeInscricao, DataDeQuotas, Email, UserType, QuotasPayGiven, PhoneNumber FROM users WHERE DataDeQuotas < CURRENT_DATE AND QuotasPayGiven = 1");
 $query->execute();
 $rs = $query->fetchAll(PDO::FETCH_OBJ);
 echo json_encode($rs);

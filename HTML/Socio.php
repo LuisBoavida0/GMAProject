@@ -44,13 +44,7 @@ IsLoggedInAdmin();
                                             </select>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="row pb-2">
-                                    <label class="col-md-4 d-flex align-items-center justify-content-end mb-0">Idade</label>
-                                    <div class="col-md-8 ">
-                                        <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-sort-by-order"></i></span><input id="Idade" placeholder="Idade" class="form-control" required="true" type="number"></div>
-                                    </div>
-                                </div>
+                                </div>                            
                                 <div class="row pb-2">
                                     <label class="col-md-4 d-flex align-items-center justify-content-end mb-0">Data de Inscrição</label>
                                     <div class="col-md-8 ">

@@ -10,8 +10,6 @@ function GetSocioData() {
         else
             $("#Sexo").val('1');
 
-        $("#Idade").val(JsonObject.Idade);
-
         $("#DataDeInscricao").val(JsonObject.DataDeInscricao);
 
         $("#DataDeQuotas").val(JsonObject.DataDeQuotas);
@@ -36,7 +34,6 @@ function Save() {
     $.post('../Handlers/SocioHandler.php?action=SaveSocioData&id=' + urlParams.get('id') +
         '&Nome=' + $("#Nome").val() +
         '&Sexo=' + $("#Sexo").val() +
-        '&Idade=' + $("#Idade").val() +
         '&DataDeInscricao=' + $("#DataDeInscricao").val() +
         '&DataDeQuotas=' + $("#DataDeQuotas").val() +
         '&Email=' + $("#Email").val() +

@@ -28,8 +28,6 @@ function GetAllSocios() {
 
             jQuery('<td/>', {}).appendTo('#Socio' + e.id).text(Sexo);
 
-            jQuery('<td/>', {}).appendTo('#Socio' + e.id).text(e.Idade);
-
             jQuery('<td/>', {}).appendTo('#Socio' + e.id).text(e.DataDeInscricao);
 
             jQuery('<td/>', {}).appendTo('#Socio' + e.id).text(e.DataDeQuotas);

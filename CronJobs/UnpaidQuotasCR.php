@@ -1,7 +1,7 @@
 <?php
 include("../PHP/Config.php");
 //GetUnpaid
-$query = $db->prepare("SELECT id, Nome, Sexo, Idade, DataDeInscricao, DataDeQuotas, Email, UserType FROM users WHERE DataDeQuotas < CURRENT_DATE AND QuotasPayGiven = 0");
+$query = $db->prepare("SELECT id, Nome, Sexo, DataDeInscricao, DataDeQuotas, Email, UserType FROM users WHERE DataDeQuotas < CURRENT_DATE AND QuotasPayGiven = 0");
 $query->execute();
 $rs = $query->fetchAll(PDO::FETCH_OBJ);
 echo "<p>" . json_encode($rs) . "</p>";

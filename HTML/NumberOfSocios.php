@@ -68,7 +68,6 @@ IsLoggedInAdmin();
                         <tr class="filters">
                             <th><input type="text" class="form-control" placeholder="Nome" disabled></th>
                             <th style="width: 55px"><input type="text" class="form-control" placeholder="Sexo" disabled></th>
-                            <th style="width: 55px"><input type="text" class="form-control" placeholder="Idade" disabled></th>
                             <th style="width: 134px"><input type="text" class="form-control" placeholder="Data de inscrição" disabled></th>
                             <th style="width: 134px"><input type="text" class="form-control" placeholder="Data de Quotas" disabled></th>
                             <th><input type="text" class="form-control" placeholder="Email" disabled></th>

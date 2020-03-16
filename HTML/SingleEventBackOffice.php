@@ -47,7 +47,7 @@ IsLoggedInAdmin();
     </div>
 
     <div>
-        <h3 class="mt-5 text-center" id="EventTitle"> Próximos eventos </h3>
+        <h3 class="mt-5 pt-5 text-center" id="EventTitle"> Próximos eventos </h3>
         <div class="slideshow-container" id="SlideshowContainerDiv">
             <!-- Sliders -->
 
