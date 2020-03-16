@@ -28,8 +28,29 @@ function GetUnpaidQuotas() {
                     "<p> Data de Quotas: " + e.DataDeQuotas + "</p>" +
                     "<p> Email: " + e.Email + "</p>" +
                     "<p> Tipo de Utilizador: " + UserType + " </p>" +
+                    "<p class=\"d-inline-block mr-3\">Já pagou as quotas? </p>" +
+                    "<button class=\"d-inline-block btn btn-warning\" data-toggle=\"modal\" data-target=\"#myModal\" onclick=\"PayQuotaModalOpen(" + e.id + ", '" + e.DataDeQuotas + "')\">Pagar a quota</button>" +
                 "</div> <br><br>"
             );
         });
+    });
+}
+
+var currentIDQuota = 0;
+var QuotasDate = "";
+function PayQuotaModalOpen(id, date) {
+    currentIDQuota = id;
+    QuotasDate = date;
+}
+
+function PayQuota() {
+    $.post('../Handlers/UnpaidQuotasHandler.php?action=PayQuota&id=' + currentIDQuota + '&OldQuota=' + QuotasDate, function (response) {
+        if (response == "success") {
+            alert("Quotas pagas com successo");
+            location.reload();
+        } else {
+            alert("Ocorreu um erro inesperado, por favor tente outra vez");
+            location.reload();
+        }
     });
 }
