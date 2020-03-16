@@ -13,8 +13,10 @@ function GetEvents() {
       window.location = "home.php";
     }
     var ItemsCounter = 0;
+    var Descricao = "";
     ParsedResponse.forEach(e => {
       ItemsCounter++;
+      Descricao = e.Descricao.replace(/\r\n|\r|\n/g,"<br />");
 
       $("#EventTitle").html(e.Titulo);
 
@@ -22,7 +24,6 @@ function GetEvents() {
         "<div class='mySlides fade show'>" +
         "<div class='numbertext'>" + ItemsCounter + " / " + ParsedResponse.length + "</div>" +
         "<img src='../Files/FilesSended/" + e.ficheiro + "' class='img-slider'>" +
-        "<div class='text'>" + e.Descricao + "</div>" +
         "</div>"
       );
 
@@ -30,6 +31,11 @@ function GetEvents() {
         "<span class='dot' onclick='currentSlide(" + ItemsCounter + ")'></span>"
       );
     });
+
+    $("#CurrentSlidesDiv").append(
+      "<p class=\"text-center description\">" + Descricao + "</p>"
+    );
+
     showSlides(slideIndex);
 
   });

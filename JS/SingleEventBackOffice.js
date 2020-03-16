@@ -19,20 +19,21 @@ function GetEvents() {
     ParsedResponse.forEach(e => {
       ItemsCounter++;
 
+      Descricao = e.Descricao.replace(/\r\n|\r|\n/g,"<br />");
+
       $("#EventTitle").html(e.Titulo);
 
       $("#SlideshowContainerDiv").prepend(
         "<div class='mySlides fade show'>" +
         "<div class='numbertext'>" + ItemsCounter + " / " + ParsedResponse.length + "</div>" +
         "<img src='../Files/FilesSended/" + e.ficheiro + "' class='img-slider'>" +
-        "<div class='text'>" + e.Descricao + "</div>" +
         "</div>"
       );
 
       $("#EditImgDiv").prepend("<div class='position-relative background-color-div'> <img src='../Files/FilesSended/" + e.ficheiro + "' class='img-slider'> <button class='top-right-0' onclick='DeleteImg(" + e.id + ", \"" +  e.ficheiro + "\")'> X </button> </div>");
 
       $("#Titulo").val(e.Titulo);
-      $("#Descricao").val(e.Descricao);
+      $("#Descricao").val(e.Descricao.replace(/<br\s?\/?>/g,"\n"));
       $("#EventDate").val(e.DataDeEvento);
 
       if (e.publico == 1) {        
@@ -44,8 +45,11 @@ function GetEvents() {
         "<span class='dot' onclick='currentSlide(" + ItemsCounter + ")'></span>"
       );
 
-
     });
+
+    $("#CurrentSlidesDiv").append(
+      "<p class=\"text-center description\">" + Descricao + "</p>"
+    );
     showSlides(slideIndex);
 
   });
@@ -92,7 +96,7 @@ function EditEvent() {
   }
 
   $.post('../Handlers/SingleEventBackOfficeHandler.php?action=EditEvent&Titulo=' + $("#Titulo").val() +
-         '&Descricao=' + $("#Descricao").val() +
+         '&Descricao=' + $("#Descricao").val().replace(/\r\n|\r|\n/g,"<br />") +
          '&EventDate=' + $("#EventDate").val() +
          '&id=' + idFromParam +
          '&Publico=' + isChecked, function (response) {

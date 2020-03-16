@@ -34,6 +34,7 @@ IsLoggedInAdmin();
                     <a href="NumberOfSocios.php" class="w3-bar-item w3-button">Numero de sócios</a>
                     <a href="Aniversariantes.php" class="w3-bar-item w3-button">Aniversariantes</a>
                     <a href="UnpaidQuotas.php" class="w3-bar-item w3-button">Pagamentos atrasados de Quotas</a>
+                    <a href="ProgrammedEvents.php" class="w3-bar-item w3-button">Eventos programados</a>                    
                 </div>
             </div>
         </div>
@@ -48,6 +49,7 @@ IsLoggedInAdmin();
                     <a href="NumberOfSocios.php" class="w3-bar-item w3-button">Numero de sócios</a>
                     <a href="Aniversariantes.php" class="w3-bar-item w3-button">Aniversariantes</a>
                     <a href="UnpaidQuotas.php" class="w3-bar-item w3-button">Pagamentos atrasados de Quotas</a>
+                    <a href="ProgrammedEvents.php" class="w3-bar-item w3-button">Eventos programados</a>                    
                 </div>
             </div>
         </div>

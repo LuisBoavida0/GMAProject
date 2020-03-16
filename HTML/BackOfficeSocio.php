@@ -33,6 +33,7 @@ IsLoggedInSocio();
                     <a href="#" class="w3-bar-item w3-button">Link</a>
                     <a href="#" class="w3-bar-item w3-button">Link</a>
                     <a href="#" class="w3-bar-item w3-button">Link</a>
+                    <a href="ProgrammedEvents.php" class="w3-bar-item w3-button">Eventos programados</a>                    
                 </div>
             </div>
         </div>
@@ -47,6 +48,7 @@ IsLoggedInSocio();
                     <a href="#" class="w3-bar-item w3-button">Link</a>
                     <a href="#" class="w3-bar-item w3-button">Link</a>
                     <a href="#" class="w3-bar-item w3-button">Link</a>
+                    <a href="ProgrammedEvents.php" class="w3-bar-item w3-button">Eventos programados</a>                    
                 </div>
             </div>
         </div>

@@ -33,6 +33,7 @@ IsLoggedInAdmin();
                     <a href="NumberOfSocios.php" class="w3-bar-item w3-button">Numero de sócios</a>
                     <a href="Aniversariantes.php" class="w3-bar-item w3-button">Aniversariantes</a>
                     <a href="UnpaidQuotas.php" class="w3-bar-item w3-button">Pagamentos atrasados de Quotas</a>
+                    <a href="ProgrammedEvents.php" class="w3-bar-item w3-button">Eventos programados</a>                    
                 </div>
             </div>
         </div>
@@ -47,6 +48,7 @@ IsLoggedInAdmin();
                     <a href="NumberOfSocios.php" class="w3-bar-item w3-button">Numero de sócios</a>
                     <a href="Aniversariantes.php" class="w3-bar-item w3-button">Aniversariantes</a>
                     <a href="UnpaidQuotas.php" class="w3-bar-item w3-button">Pagamentos atrasados de Quotas</a>
+                    <a href="ProgrammedEvents.php" class="w3-bar-item w3-button">Eventos programados</a>                    
                 </div>
             </div>
         </div>
@@ -78,7 +80,8 @@ IsLoggedInAdmin();
                     <br>
 
                     <p>Descricao</p>
-                    <input type="text" name="Descricao" id="Descricao" placeholder="Descricao" required>
+
+                    <textarea name="Descricao" id="Descricao" cols="30" placeholder="Descricao" rows="10" required></textarea>
                     <br><br>
 
                     <input type="file" name="InputFile[]" id="InputFile" multiple="multiple" required>
