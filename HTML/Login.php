@@ -33,12 +33,6 @@
                 <input type="password" id="Password" class="fadeIn third" name="Password" placeholder="Password">
                 <input type="submit" class="fadeIn fourth" value="Log In" onclick="Login()">
             </div>
-
-            <!-- Forgot Passowrd -->
-            <div id="formFooter">
-                <a class="underlineHover" href="#">Forgot Password?</a>
-            </div>
-
         </div>
     </div>
 </body>

@@ -43,13 +43,17 @@ function PayQuotaModalOpen(id, date) {
 }
 
 function PayQuota() {
-    $.post('../Handlers/UnpaidQuotasHandler.php?action=PayQuota&id=' + currentIDQuota + '&OldQuota=' + QuotasDate, function (response) {
-        if (response == "success") {
-            alert("Quotas pagas com successo");
-            location.reload();
-        } else {
-            alert("Ocorreu um erro inesperado, por favor tente outra vez");
-            location.reload();
-        }
-    });
+    if ($("#dateQuotasPaid").val()) {
+        $.post('../Handlers/UnpaidQuotasHandler.php?action=PayQuota&id=' + currentIDQuota + '&OldQuota=' + $("#dateQuotasPaid").val(), function (response) {
+            if (response == "success") {
+                alert("Quotas pagas com successo");
+                location.reload();
+            } else {
+                alert("Ocorreu um erro inesperado, por favor tente outra vez");
+                location.reload();
+            }
+        });
+    } else {
+        alert("Tem que escolher a data de quando acaba a quota paga");
+    }    
 }

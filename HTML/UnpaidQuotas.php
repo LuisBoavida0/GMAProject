@@ -81,7 +81,8 @@ IsLoggedInAdmin();
 
                 <!-- Modal body -->
                 <div class="modal-body">
-                    Têm a certeza que quer marcar como pagas as quotas?
+                    <p>Selecione ate quando as quotas tao pagas</p>
+                    <input type="date" id="dateQuotasPaid">
                 </div>
 
                 <!-- Modal footer -->

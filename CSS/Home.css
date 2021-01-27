@@ -35,6 +35,10 @@ img {
   margin: auto;
 }
 
+.Events-Slides {
+  cursor: pointer;
+}
+
 .Home-slides img {
   max-height: 500px;
   object-fit: contain;

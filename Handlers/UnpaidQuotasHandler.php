@@ -11,10 +11,9 @@ if (isset($_REQUEST['action'])) {
             break;
         case "PayQuota":
             $date = new DateTime($_REQUEST["OldQuota"]);
-            $date->modify('+3 month'); // or you can use '-90 day' for deduct
             $date = $date->format('Y-m-d');          
             
-            $query = $db->prepare("UPDATE users SET DataDeQuotas = '" . $date . "' WHERE id = '" . $_REQUEST["id"] . "';");
+            $query = $db->prepare("UPDATE users SET DataDeQuotas = '" . $date . "' AND QuotasPayGiven = 0 WHERE id = '" . $_REQUEST["id"] . "';");
             $query->execute();            
             echo 'success';
             break;
